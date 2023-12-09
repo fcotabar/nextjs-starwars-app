@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '
+⏱ ⏱ ⏳⏳   Before commiting checking for styling errors   ⏳⏳ ⏱ ⏱
+'
+
+# Check linters - Eslint and Stylelint
+npm run lint || (
+  echo '
+  💣💣💥💥     Exploded fix errors     💥💥💣💣
+  '
+  false;
+)
+
+echo '
+✅✅✅✅ Ready for commit ✅✅✅
+'

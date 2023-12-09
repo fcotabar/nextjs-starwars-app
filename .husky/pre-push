@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '
+⏱ ⏱ ⏳⏳   Before pushing running tests   ⏳⏳ ⏱ ⏱
+'
+
+# Check linters - Eslint and Stylelint
+npm run test || (
+  echo '
+  💣💣💥💥     Exploded fix errors     💥💥💣💣
+  '
+  false;
+)
+
+echo '
+✅✅✅✅ Ready to push ✅✅✅
+'

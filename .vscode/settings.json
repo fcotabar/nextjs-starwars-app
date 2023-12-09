@@ -1,0 +1,65 @@
+{
+  "markdown.preview.breaks": true,
+  "editor.formatOnSave": true,
+  "eslint.format.enable": false,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[json]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  "eslint.workingDirectories": [
+    ".",
+    "./tests/unit/"
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Stylelint configs
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "scss"],
+  "stylelint.snippet": ["css", "scss"],
+  "stylelint.config": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-recommended",
+      "stylelint-config-standard-scss",
+      "stylelint-config-recommended-scss",
+      "stylelint-prettier/recommended"
+    ],
+    "plugins": ["stylelint-prettier"],
+    "rules": {
+      "prettier/prettier": [
+        true,
+        {
+          "singleQuote": true,
+          "tabWidth": 2
+        }
+      ]
+    },
+    "block-no-empty": true,
+    "unit-allowed-list": [
+      "em",
+      "rem",
+      "ch",
+      "vh",
+      "v",
+      "%",
+      "deg",
+      "px",
+      "vw",
+      "fr",
+      "s",
+      "ms"
+    ],
+    "no-descending-specificity": true,
+    "color-no-invalid-hex": true,
+    "font-family-no-missing-generic-family-keyword": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  }
+}
